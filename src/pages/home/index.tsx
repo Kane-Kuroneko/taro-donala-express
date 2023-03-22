@@ -1,5 +1,5 @@
 import { Component , PropsWithChildren } from 'react';
-import { View , Button , Text , PageContainer } from '@tarojs/components';
+import { View , Button , Text , PageContainer , Navigator } from '@tarojs/components';
 import './index.less';
 
 // type PageStateProps = {
@@ -12,40 +12,12 @@ import './index.less';
 // 		}
 // 	}
 // }
-const {store,setState} = orzMobx( { show : true } );
-import { SearchInputExpressNo } from '../--Components--/Search-Input-Express-No';
-export const Home = reaxper( class extends Reaxlass {
+export default reaxper( () => {
 	
-	render() {
-		return <PageContainer
-			show = { store.show }
-			position = "center"
-			onBeforeLeave = { () => {
-				wx.showModal( {
-					title : "确定要离开吗?" ,
-					showCancel : true ,
-					success( res ) {
-						console.log(res);
-						if( res.confirm ) {
-							setState({show:false})
-						} else if(res.cancel) {
-							setTimeout( () => setState( { show : true } ) );
-						}
-					} ,
-					
-				} );
-			} }
-		>
-			<View className = "index">
-				<SearchInputExpressNo />
-				
-				<Button
-					onClick = { () => {
-						setState({show:false})
-					} }
-				>show</Button>
-			</View>
-		</PageContainer>;
-	}
+	useEffect( () => {
+		Taro.navigateTo({ url : "../test/index"})
+	} , [] );
+	return <View onClick = { () => {Taro.navigateTo( { url : "../test/index" } );} }>
+		Home
+	</View>;
 } );
-export default Home;
