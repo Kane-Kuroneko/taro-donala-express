@@ -17,6 +17,10 @@ module.exports = {
 			{
 				declarations : [
 					{
+						path : "@tarojs/taro",
+						namespace : "Taro",
+					},
+					{
 						path : "react" ,
 						members : [
 							"useState",

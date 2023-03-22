@@ -42,3 +42,5 @@ declare const utils:typeof import("reaxes-utils");
 declare const {crayon,orzPromise} : typeof utils;
 declare const toolkit:typeof import('reaxes-toolkit');
 declare const {orzPending} : typeof toolkit;
+declare const Taro: typeof import("@tarojs/taro");
+
