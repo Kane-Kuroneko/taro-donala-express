@@ -1,6 +1,6 @@
 import { Component , PropsWithChildren } from 'react';
 import { View , Button , Text , PageContainer , Navigator } from '@tarojs/components';
-import './index.less';
+import less from './index.less';
 
 // type PageStateProps = {
 // 	store: {
@@ -14,10 +14,12 @@ import './index.less';
 // }
 export default reaxper( () => {
 	
-	useEffect( () => {
-		Taro.navigateTo({ url : "../test/index"})
-	} , [] );
-	return <View onClick = { () => {Taro.navigateTo( { url : "../test/index" } );} }>
+	// useEffect( () => {
+	// 	Taro.navigateTo({ url : "../index/index"})
+	// } , [] );
+	return <View onClick = { () => {
+		Taro.navigateTo( { url : "../index/index" } );
+	} }>
 		Home
 	</View>;
 } );

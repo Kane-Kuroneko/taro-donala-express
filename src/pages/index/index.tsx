@@ -1,6 +1,6 @@
 import { Component , PropsWithChildren } from 'react';
 import { View , Button , Text , PageContainer } from '@tarojs/components';
-import './index.less';
+import less from './index.less';
 
 // type PageStateProps = {
 // 	store: {
@@ -16,13 +16,13 @@ const {store,setState} = orzMobx( { show : true } );
 import { SearchInputExpressNo } from '../--Components--/Search-Input-Express-No';
 export const Home = reaxper( class extends Reaxlass {
 	
-	render() {
+	render() {		
 		return <>
 			<View onClick = { () => {setState({show:true})} }>dddddddddddddddd</View>
 			
 			<PageContainer
 				show = { store.show }
-				position = "bottom"
+				position = "center"
 				onBeforeLeave = { () => {
 					/*必须加这一行,多sb的bug*/
 					setState( { show : false } );
@@ -41,17 +41,23 @@ export const Home = reaxper( class extends Reaxlass {
 					} );
 				} }
 			>
-				<View className = "index">
+				<View >
 					<SearchInputExpressNo />
 					
 					<Button
 						onClick = { () => {
-							setState( { show : false } );
+							Taro.login().then( ( { code } ) => {
+								console.log( 'code' , code );
+							} ).catch( ( error ) => {
+								console.error( '登录失败:' , error );
+							} );
 						} }
-					>hide</Button>
+					>登录授权</Button>
 				</View>
 			</PageContainer>
 		</>;
 	}
 } );
+
+
 export default Home;
