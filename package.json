@@ -32,6 +32,10 @@
 		"ios >= 8"
 	],
 	"author": "",
+	"prettier" : {
+		"tabWidth" : 3,
+		"useTabs" : true
+	} ,
 	"license": "MIT",
 	"dependencies": {
 		"@babel/runtime": "^7.7.7",
@@ -55,7 +59,7 @@
 		"react-router-dom": "^6.9.0",
 		"reaxes": "^0.0.2",
 		"reaxes-react": "^0.0.2",
-		"reaxes-toolkit": "^0.0.1",
+		"reaxes-toolkit": "^0.0.6",
 		"reaxes-utils": "^0.0.2",
 		"taro-ui": "^3.1.0-beta.4"
 	},

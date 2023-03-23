@@ -6,15 +6,17 @@ export const reaxelのcustom_tab_bar = reaxel( () => {
 		current : "index" as tabbarKeyEnum ,
 		list : [
 			{
-				key : "index" as tabbarKeyEnum ,
+				key : "index" as const ,
 				pagePath : '/pages/index/index' ,
+				iconType : "home",
 				// selectedIconPath : tabBarIndexSelectedSVG ,
 				// iconPath : tabBarIndexSVG ,
 				text : '查快递' ,
 			} ,
 			{
-				key : "profile" as tabbarKeyEnum ,
+				key : "profile" as const ,
 				pagePath : '/pages/profile/index' ,
+				iconType : "user",
 				// selectedIconPath : tabBarIndexSelectedSVG ,
 				// iconPath : tabBarIndexSVG ,
 				text : '我的' ,

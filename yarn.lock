@@ -10492,10 +10492,10 @@ reaxes-react@^0.0.2:
   dependencies:
     lodash "4.17.21"
 
-reaxes-toolkit@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/reaxes-toolkit/-/reaxes-toolkit-0.0.1.tgz#5887c8ba1a1cc90457f4fb348e13d6fd16517595"
-  integrity sha512-DN4tzBlFlSsDCgFqlD7ysNOuQ31zZFjsGhIM5c6YrCsSv5ya0pWjvztMA7NpdTJ3eCfhNs5CEaJYI7xfzZqRRw==
+reaxes-toolkit@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/reaxes-toolkit/-/reaxes-toolkit-0.0.6.tgz#bda1b281e799148c78ca587acef48eb1d9cd622f"
+  integrity sha512-pGmDSpTiaxjWa776OALOq9Lozq0FZ1ZDlE2fj+twLCUsDFa9EUrkzuxhlXaO535UyTXrtvGB0Chot3K/8pKSnQ==
 
 reaxes-utils@^0.0.2, reaxes-utils@~0.0.2:
   version "0.0.2"

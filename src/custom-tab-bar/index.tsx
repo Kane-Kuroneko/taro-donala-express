@@ -4,33 +4,38 @@ export default reaxper( () => {
 	const { list , current } = STORE_curstom_tab_bar;
 	
 	
-	const TabbarElements = list.map( ( {key,pagePath,iconPath,selectedIconPath,text,} ) => {
-		return <CoverView
+	const TabbarElements = list.map( ( {key,pagePath,text,iconType} ) => {
+		const isCurrency = current === key;
+		return <View
 			key = { key }
-			className='tab-bar-item'
+			className = "tab-bar-item"
 			onClick = { () => {
-				onTabbarClick(key);
+				onTabbarClick( key );
 			} }
 		>
+			{/*<Image src={srcのtabbarIndex}/>*/ }
 			{/*<View className='at-icon at-icon-settings'></View>*/}
-			<AtIcon value='clock' size='22' color='#F00'></AtIcon>
-			<CoverView style = { { fontSize : "22px" , color : current === key ? "blue" : "gray" } }>{ text }</CoverView>
-		</CoverView>;
+			<AtIcon
+				value = { iconType }
+				size = "22"
+				color = { isCurrency ? "#00afff" : "#919191" }
+			/>
+			<View style = { { fontSize : "18px" , color : isCurrency ? "#00afff" : "#919191" } }>{ text }</View>
+		</View>;
 	});
 	
 	return <>
-		<CoverView className='tab-bar'>
-			<CoverView className='tab-bar-border'></CoverView>
+		<View className='tab-bar'>
+			<View className='tab-bar-border'></View>
 			{TabbarElements}
-		</CoverView>
+		</View>
 	</>;
 } );
 
 import './index.scss';
-import srcのtabbarIndex from '../assets/tabbarIndex.svg';
-import srcのtabbarIndexSelected from '../assets/tabbar-index-selected.svg';
 // import less from './index.less';
 import { reaxelのcustom_tab_bar } from './reaxel';
-import { CoverView , CoverImage,Image ,View} from '@tarojs/components';
+import { View , CoverImage,Image } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
-import 'taro-ui/dist/style/index.scss';
+// import 'taro-ui/dist/style/index.scss';
+

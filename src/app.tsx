@@ -13,3 +13,5 @@ class App extends Component<PropsWithChildren> {
 }
 
 export default App;
+
+import 'taro-ui/dist/style/index.scss';
