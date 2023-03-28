@@ -1,16 +1,18 @@
-const path = require('node:path');
-const projectRoot = path.resolve(__dirname , '../');
+import path from 'node:path';
+import {obsProjectRootDir} from './toolkit';
+import {pkg} from './entrence';
+
+const obsPkgRoot = path.join(obsProjectRootDir,"packages",pkg);
 const config = {
 	projectName : 'taro-donala-express' ,
 	date : '2023-3-8' ,
 	alias: {
-		'--Components--': path.join(projectRoot,'src/--Components--'),
-		'@@assets' : path.join(projectRoot,'src/assets'),
-		'@@pages' : path.join(projectRoot,'src/pages'),
-		'@@reaxels' : path.join(projectRoot,'src/reaxels'),
-		'@@requests' : path.join(projectRoot,'src/requests'),
-		'#root' : path.join(projectRoot),
-		
+		'#root' : obsProjectRootDir,
+		'--Components--': path.join(obsPkgRoot,'src/--Components--'),
+		'@@assets' : path.join(obsPkgRoot,'src/assets'),
+		'@@pages' : path.join(obsPkgRoot,'src/pages'),
+		'@@reaxels' : path.join(obsPkgRoot,'src/reaxels'),
+		'@@requests' : path.join(obsPkgRoot,'src/requests'),
 		
 	},
 	designWidth : 750 ,
@@ -19,8 +21,10 @@ const config = {
 		750 : 1 ,
 		828 : 1.81 / 2,
 	} ,
-	sourceRoot : 'src' ,
-	outputRoot : 'dist' ,
+	sourceRoot : `packages/${pkg}/src/` ,
+	// sourceRoot : path.join(obsPkgRoot,'src') ,
+	outputRoot : path.join(obsProjectRootDir,`${pkg}.dist`) ,
+	// outputRoot : 'dist' ,
 	plugins : [] ,
 	defineConstants : {} ,
 	copy : {
@@ -71,8 +75,7 @@ const config = {
 		},
 	},
 };
-
-module.exports = function (merge) {
+export default function (merge) {
 	if ( process.env.NODE_ENV === 'development' ) {
 		return merge({} , config , require('./dev'));
 	}

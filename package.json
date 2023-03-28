@@ -1,13 +1,8 @@
 {
-	"name": "taro-donala-express",
+	"name": "taro-reaxes-frame",
 	"version": "1.0.0",
 	"private": true,
 	"description": "",
-	"templateInfo": {
-		"name": "mobx",
-		"typescript": true,
-		"css": "less"
-	},
 	"scripts": {
 		"build:weapp": "taro build --type weapp",
 		"build:swan": "taro build --type swan",
@@ -26,16 +21,17 @@
 		"dev:qq": "npm run build:qq -- --watch",
 		"dev:quickapp": "npm run build:quickapp -- --watch"
 	},
+	"workspaces" : ["packages/*"] ,
 	"browserslist": [
 		"last 3 versions",
 		"Android >= 4.1",
 		"ios >= 8"
 	],
 	"author": "",
-	"prettier" : {
-		"tabWidth" : 3,
-		"useTabs" : true
-	} ,
+	"prettier": {
+		"tabWidth": 3,
+		"useTabs": true
+	},
 	"license": "MIT",
 	"dependencies": {
 		"@babel/runtime": "^7.7.7",
@@ -78,10 +74,16 @@
 		"eslint-plugin-import": "^2.12.0",
 		"eslint-plugin-react": "^7.8.2",
 		"eslint-plugin-react-hooks": "^4.2.0",
+		"portfinder": "^1.0.32",
 		"postcss": "^8.4.18",
 		"react-refresh": "^0.11.0",
 		"stylelint": "9.3.0",
 		"typescript": "^4.1.0",
 		"webpack": "5.69.0"
+	},
+	"templateInfo": {
+		"name": "mobx",
+		"typescript": true,
+		"css": "less"
 	}
 }

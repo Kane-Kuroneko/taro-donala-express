@@ -3,6 +3,7 @@
 		"allowJs" : true ,
 		"allowSyntheticDefaultImports" : true ,
 		"allowUnusedLabels" : true ,
+		"checkJs" : true ,
 		"baseUrl" : "." ,
 		"declaration" : false ,
 		"declarationMap" : false ,
@@ -15,7 +16,7 @@
 		"strictBindCallApply" : false ,
 		"strictNullChecks" : false ,
 		"allowUnreachableCode" : true ,
-		"module" : "CommonJS" ,
+		"module" : "ESNext" ,
 		"moduleResolution" : "node" ,
 		"noEmit" : true ,
 		"noImplicitAny" : false ,
@@ -37,9 +38,9 @@
 			"@@reaxels/*" : ["src/reaxels/*"],
 			"@@requests/*" : ["src/requests/*"],
 			"@@requests" : ["src/requests"],
-			"#root/*" : ["./*"],
+			"#root/*" : ["./*"]
 		}
 	},
-	"include": ["./src", "./types"],
+	"exclude" : [ "node_modules" ,"*.dist"] ,
 	"compileOnSave": false
 }
